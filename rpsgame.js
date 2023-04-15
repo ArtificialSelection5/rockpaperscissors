@@ -6,36 +6,20 @@ function getComputerChoice(){
 }
 
 function playround(computerChoice, playerChoice){
-    if(computerChoice === "rock" && playerChoice === "rock"){
+    if(computerChoice ===  playerChoice){
         result = "Its a tie.";
         return result;
-    } else if(computerChoice === "rock" && playerChoice === "paper"){
-        result = "You Win! Paper beats Rock!";
+    } else if(computerChoice === "rock" && playerChoice === "paper" || 
+              computerChoice === "paper" && playerChoice === "scissors"||
+              computerChoice === "scissors" && playerChoice === "rock"){
+        result = `You Win! ${playerChoice} beats ${computerChoice}!`;
         score += 1; 
         return result;   
-    } else if(computerChoice === "rock" && playerChoice === "scissors"){
-        result = "You Lose! Rock beats Scissors!"; 
+    } else if(computerChoice === "rock" && playerChoice === "scissors"||
+              computerChoice === "paper" && playerChoice === "rock"||
+              computerChoice === "scissors" && playerChoice === "paper"){
+        result = `You Lose! ${computerChoice} beats ${playerChoice}!`; 
         return result;  
-    } else if(computerChoice === "paper" && playerChoice === "rock"){
-        result = "You Lose! Paper beats Rock!";
-        return result;
-    } else if(computerChoice === "paper" && playerChoice === "paper"){
-        result = "Its a tie.";
-        return result;
-    } else if(computerChoice === "paper" && playerChoice === "scissors"){
-        result = "You Win! Scissors beat Paper!";
-        score += 1;
-        return result;
-    } else if(computerChoice === "scissors" && playerChoice === "rock"){
-        result = "You Win! Rock beats Scissors!";
-        score += 1;
-        return result;
-    } else if(computerChoice === "scissors" && playerChoice === "paper"){
-        result = "You Lose! Scissors beats Paper!"; 
-        return result;   
-    } else if(computerChoice === "scissors" && playerChoice === "scissors"){
-        result = "Its a tie."; 
-        return result;   
     }
 }
 
